@@ -16,7 +16,7 @@ class _TodoState extends State<Todo> {
   void addTask(text) {
     setState(() {
       task.add(text);
-    }); 
+    });
   }
 
   void resetTask() {
@@ -28,13 +28,26 @@ class _TodoState extends State<Todo> {
   void checkedTask(index) {
     setState(() {
       String checkedItem = task.removeAt(index);
-      task.add(checkedItem);
+      completedTask.add(checkedItem);
+    });
+  }
+
+  void unCheckTask(index) {
+    setState(() {
+      String unCheckedItem = completedTask.removeAt(index);
+      task.add(unCheckedItem);
     });
   }
 
   void deleteTask(index) {
     setState(() {
       task.removeAt(index);
+    });
+  }
+
+  void checkDeleteTask(index) {
+    setState(() {
+      completedTask.removeAt(index);
     });
   }
 
@@ -119,44 +132,76 @@ class _TodoState extends State<Todo> {
             color: Colors.grey,
           );
         },
-        itemCount: task.length,
+        itemCount: task.length + completedTask.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: IconButton(
-              icon: const Icon(Icons.check_box_outline_blank),
-              onPressed: () {
-                checkedTask(index);
-              },
-            ),
-            title: Text(task[index]),
-            trailing: SizedBox(
-              width: 80,
-              child: Row(children: [
-                IconButton(
-                  // edit btn
-                  onPressed: () {
-                    editForm(context, index);
-                  },
-                  icon: Icon(Icons.edit),
-                ),
-                IconButton(
-                  // delete btn
-                  onPressed: () {
-                    deleteTask(index);
-                  },
-                  icon: Icon(Icons.delete_outline),
-                ),
-              ]),
-            ),
-          );
-          // SizedBox(height: 20,),
-          // ListTile(
-          //   leading: IconButton(
-          //     icon: const Icon(Icons.check_box_outlined),
-          //     onPressed: (){},
-          //   ),
-          //   title: Text(completedTask[index]),
-          // );
+          if (index < task.length) {
+            return ListTile(
+              leading: IconButton(
+                icon: const Icon(Icons.check_box_outline_blank),
+                onPressed: () {
+                  checkedTask(index);
+                },
+              ),
+              title: Text(task[index]),
+              trailing: SizedBox(
+                width: 80,
+                child: Row(children: [
+                  IconButton(
+                    // edit btn
+                    onPressed: () {
+                      editForm(context, index);
+                    },
+                    icon: const Icon(Icons.edit),
+                  ),
+                  IconButton(
+                    // delete btn
+                    onPressed: () {
+                      deleteTask(index);
+                    },
+                    icon: const Icon(Icons.delete_outline),
+                  ),
+                ]),
+              ),
+            );
+          } else {
+            final completedIndex = index - task.length;
+
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Completed Tasks',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  ListTile(
+                    leading: IconButton(
+                      icon: const Icon(Icons.check_box_outlined),
+                      onPressed: () {
+                        unCheckTask(completedIndex);
+                      },
+                    ),
+                    title: Text(
+                      completedTask[completedIndex],
+                      style: const TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        checkDeleteTask(completedIndex);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }
         },
       ),
       floatingActionButton: Row(
@@ -166,17 +211,16 @@ class _TodoState extends State<Todo> {
             onPressed: () {
               resetTask();
             },
-            child: Icon(Icons.refresh),
+            child: const Icon(Icons.refresh),
           ),
           FloatingActionButton(
             onPressed: () {
               openForm(context);
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ],
       ),
     );
   }
 }
-
