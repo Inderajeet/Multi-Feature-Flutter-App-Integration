@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/2nd_proj/HomeScreen.dart';
 import 'package:test_project/2nd_proj/Calculator.dart';
 import 'package:test_project/2nd_proj/Gallery.dart';
 import 'package:test_project/2nd_proj/Todo.dart';
@@ -24,7 +25,7 @@ class BottomBarHome extends StatefulWidget {
 
 class _BottomBarHomeState extends State<BottomBarHome> {
   int selectedIndex = 1;
-  final List<Widget> navScreen = [Todo(), Calculator(), Gallery(), Todo()];
+  final List<Widget> navScreen = [HomeScreen(), Calculator(), Gallery(), Todo()];
 
   AppBar appBar() {
     switch (selectedIndex) {
@@ -36,7 +37,7 @@ class _BottomBarHomeState extends State<BottomBarHome> {
       case 1:
         return AppBar(
           title: Text('Calculator'),
-          backgroundColor: Color.fromARGB(255, 211, 186, 46),
+              backgroundColor: Color.fromARGB(255, 241, 186, 3),
         );
       case 2:
         return AppBar(
@@ -81,7 +82,7 @@ class _BottomBarHomeState extends State<BottomBarHome> {
             BottomNavigationBarItem(
               icon: Icon(Icons.calculate_rounded),
               label: 'Calculator',
-              backgroundColor: Color.fromARGB(255, 211, 186, 46),
+              backgroundColor: Color.fromARGB(255, 241, 186, 3),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.image_outlined),

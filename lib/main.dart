@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/SplashScreen.dart';
 import 'package:test_project/bottom_nav.dart';
 import 'package:test_project/bottom_nav_demo.dart';
-import 'package:test_project/1st_proj/bottom_nav_prac.dart';
+// import 'package:test_project/1st_proj/bottom_nav_prac.dart';
 import 'package:test_project/2nd_proj/home.dart';
 import 'package:test_project/calc_demo.dart';
 import 'package:test_project/calculator.dart';
@@ -12,7 +13,7 @@ import 'package:test_project/sample.dart';
 import 'package:test_project/todo.dart';
 
 void main() {
-  runApp(HomeClass());
+  runApp(SplashScreen());
 }
 
 class MyApp extends StatelessWidget {

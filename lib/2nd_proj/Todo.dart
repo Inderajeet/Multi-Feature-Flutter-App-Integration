@@ -11,16 +11,24 @@ class _TodoState extends State<Todo> {
   TextEditingController textEditingController = TextEditingController();
   TextEditingController textController = TextEditingController();
   List<String> task = [];
+  List<String> completedTask = [];
 
   void addTask(text) {
     setState(() {
       task.add(text);
-    });
+    }); 
   }
 
   void resetTask() {
     setState(() {
       task = [];
+    });
+  }
+
+  void checkedTask(index) {
+    setState(() {
+      String checkedItem = task.removeAt(index);
+      task.add(checkedItem);
     });
   }
 
@@ -106,7 +114,7 @@ class _TodoState extends State<Todo> {
     return Scaffold(
       body: ListView.separated(
         separatorBuilder: (context, index) {
-          return Divider(
+          return const Divider(
             height: 4,
             color: Colors.grey,
           );
@@ -114,7 +122,12 @@ class _TodoState extends State<Todo> {
         itemCount: task.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Icon(Icons.check_box_outline_blank),
+            leading: IconButton(
+              icon: const Icon(Icons.check_box_outline_blank),
+              onPressed: () {
+                checkedTask(index);
+              },
+            ),
             title: Text(task[index]),
             trailing: SizedBox(
               width: 80,
@@ -136,6 +149,14 @@ class _TodoState extends State<Todo> {
               ]),
             ),
           );
+          // SizedBox(height: 20,),
+          // ListTile(
+          //   leading: IconButton(
+          //     icon: const Icon(Icons.check_box_outlined),
+          //     onPressed: (){},
+          //   ),
+          //   title: Text(completedTask[index]),
+          // );
         },
       ),
       floatingActionButton: Row(
@@ -158,3 +179,4 @@ class _TodoState extends State<Todo> {
     );
   }
 }
+

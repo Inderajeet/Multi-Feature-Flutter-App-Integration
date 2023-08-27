@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart'; // Add this import for math_expressions
 
 
-void main() {
-  runApp(CalculatorApp());
-}
+// void main() {
+//   runApp(CalculatorApp());
+// }
 
 class CalculatorApp extends StatelessWidget {
   @override
