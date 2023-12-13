@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561497861193",
+    "project_id": "vocal-mapper-311305",
+    "storage_bucket": "vocal-mapper-311305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561497861193:android:ee0610cc26b27494c96398",
+        "android_client_info": {
+          "package_name": "com.example.test_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561497861193-3omm7b043kld99bm7173k1l93qhll0gu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAVNKY_VUCYaDcD3AgIswHNgfUcbjTooM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561497861193-3omm7b043kld99bm7173k1l93qhll0gu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
