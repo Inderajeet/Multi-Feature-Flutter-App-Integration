@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/services.dart';
-import 'package:test_project/2nd_proj/home.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:test_project/main.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -45,38 +45,57 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         width: double.infinity, // full screen width
         height: double.infinity,
         decoration: const BoxDecoration(
-          gradient: SweepGradient(
+          // gradient: SweepGradient(
+          //   colors: [
+          //     Color.fromARGB(255, 43, 190, 87),
+          //     Color.fromARGB(255, 187, 221, 38),
+          //     Color.fromARGB(255, 187, 221, 38),
+          //     Color.fromARGB(255, 43, 190, 87),
+          //     Color.fromARGB(255, 43, 190, 87),
+          //   ],
+          //   // begin: Alignment.topLeft,
+          //   // end: Alignment.bottomRight,
+          // ),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 43, 190, 87),
-              Color.fromARGB(255, 187, 221, 38),
-              Color.fromARGB(255, 187, 221, 38),
-              Color.fromARGB(255, 43, 190, 87),
-              Color.fromARGB(255, 43, 190, 87),
+              Color(0xFF387F84),
+              Color(0xFF367031),
             ],
-            // begin: Alignment.topLeft,
-            // end: Alignment.bottomRight,
           ),
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.yard,
-              color: Color.fromARGB(255, 141, 11, 173),
-              size: 50,
-            ),
+            // Icon(
+            //   Icons.yard,
+            //   color: Color.fromARGB(255, 141, 11, 173),
+            //   size: 50,
+            // ).animate().fade(duration: 500.milliseconds).scaleY(
+            //       begin: 0,
+            //       end: 1,
+            //       duration: Duration(milliseconds: 500),
+            //     ),
             Text(
               'CIP STUDIOZ',
               style: TextStyle(
-                fontSize: 30,
-                color: Color.fromARGB(255, 141, 11, 173),
+                fontFamily: 'Chewy',
+                fontSize: (screenHeight + screenWidth) * 0.055,
+                color: Color.fromARGB(255, 226, 211, 71),
               ),
-            ),
+            ).animate().fade(duration: 500.milliseconds).scaleY(
+                  begin: 0,
+                  end: 1,
+                  duration: Duration(milliseconds: 500),
+                ),
           ],
         ),
       ),

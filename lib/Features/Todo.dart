@@ -56,10 +56,10 @@ class _TodoState extends State<Todo> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Edit task'),
+            title: const Text('Edit task'),
             content: TextField(
               controller: textController,
-              decoration: InputDecoration(labelText: 'Edit your task'),
+              decoration: const InputDecoration(labelText: 'Edit your task'),
             ),
             actions: [
               ElevatedButton(
@@ -71,13 +71,13 @@ class _TodoState extends State<Todo> {
                   textController.clear();
                   Navigator.of(context).pop();
                 },
-                child: Text('Edit task'),
+                child: const Text('Edit task'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('Cancel'),
+                child: const Text('Cancel'),
               ),
             ],
           );
@@ -89,10 +89,10 @@ class _TodoState extends State<Todo> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add task'),
+          title: const Text('Add task'),
           content: TextField(
             controller: textEditingController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Enter your task',
             ),
           ),
@@ -107,11 +107,11 @@ class _TodoState extends State<Todo> {
                   Navigator.of(context).pop();
                 }
               },
-              child: Text('Add task'),
+              child: const Text('Add task'),
             ),
             ElevatedButton(
               // cancel btn
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
