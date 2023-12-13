@@ -1,0 +1,16 @@
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/test_project
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/assets/sbi_saving_account.jpg
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/assets/salary_account.jpg
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/fonts/Chewy-Regular.ttf
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/cip/flutter_projects/test_project/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
